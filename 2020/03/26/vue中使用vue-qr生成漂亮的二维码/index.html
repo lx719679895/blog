@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="vue,vue-qr,二维码," />
+  <meta name="keywords" content="vue,vue-qr," />
 
 
 
@@ -86,18 +86,17 @@
 
 
 
-<meta name="description" content="最近在项目中遇到一个生成二维码的需求，并且二维码上要带上logo和背景。使用qrcode只能单纯的生成二维码，不能带logo及其它一些自定义。于是便找到了vue-qr这个插件。vue-qr具有自定义二维码背景、logo、实点颜色等等特性，能够生成更炫酷的二维码。 vue-qr是Awesome-qr.js的Vue 2.x组件  安装npm install vue-qr --save 使用123456">
+<meta name="description" content="最近在项目中遇到一个生成二维码的需求，并且二维码上要带上logo和背景。使用qrcode只能单纯的生成二维码，不能带logo及其它一些自定义。于是便找到了vue-qr这个插件。vue-qr具有自定义二维码背景、logo、实点颜色等等特性，能够生成更炫酷的二维码。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中使用vue-qr生成漂亮的二维码">
 <meta property="og:url" content="http://yoursite.com/2020/03/26/vue%E4%B8%AD%E4%BD%BF%E7%94%A8vue-qr%E7%94%9F%E6%88%90%E6%BC%82%E4%BA%AE%E7%9A%84%E4%BA%8C%E7%BB%B4%E7%A0%81/index.html">
 <meta property="og:site_name" content="ShawLee&#39;s Blog">
-<meta property="og:description" content="最近在项目中遇到一个生成二维码的需求，并且二维码上要带上logo和背景。使用qrcode只能单纯的生成二维码，不能带logo及其它一些自定义。于是便找到了vue-qr这个插件。vue-qr具有自定义二维码背景、logo、实点颜色等等特性，能够生成更炫酷的二维码。 vue-qr是Awesome-qr.js的Vue 2.x组件  安装npm install vue-qr --save 使用123456">
+<meta property="og:description" content="最近在项目中遇到一个生成二维码的需求，并且二维码上要带上logo和背景。使用qrcode只能单纯的生成二维码，不能带logo及其它一些自定义。于是便找到了vue-qr这个插件。vue-qr具有自定义二维码背景、logo、实点颜色等等特性，能够生成更炫酷的二维码。">
 <meta property="article:published_time" content="2020-03-26T03:57:47.000Z">
-<meta property="article:modified_time" content="2020-03-26T06:53:11.526Z">
+<meta property="article:modified_time" content="2020-03-27T06:25:13.044Z">
 <meta property="article:author" content="Lixiao">
 <meta property="article:tag" content="vue">
 <meta property="article:tag" content="vue-qr">
-<meta property="article:tag" content="二维码">
 <meta name="twitter:card" content="summary">
 
 
@@ -291,6 +290,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/WEB%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">WEB开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -350,6 +371,8 @@
 
       
         <p>最近在项目中遇到一个生成二维码的需求，并且二维码上要带上logo和背景。使用qrcode只能单纯的生成二维码，不能带logo及其它一些自定义。<br>于是便找到了vue-qr这个插件。vue-qr具有自定义二维码背景、logo、实点颜色等等特性，能够生成更炫酷的二维码。</p>
+<a id="more"></a>
+
 <p>vue-qr是<a href="https://github.com/SumiMakito/Awesome-qr.js" target="_blank" rel="noopener">Awesome-qr.js</a>的Vue 2.x组件</p>
 <hr>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>npm install vue-qr --save</code></p>
@@ -358,50 +381,50 @@
 <h2 id="参数及说明"><a href="#参数及说明" class="headerlink" title="参数及说明"></a>参数及说明</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><table>
 <thead>
 <tr>
-<th>参数</th>
-<th>说明</th>
-<th>必要性</th>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">必要性</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>text</td>
-<td>二维码内容</td>
-<td>必需</td>
+<td align="left">text</td>
+<td align="left">二维码内容</td>
+<td align="left">必需</td>
 </tr>
 <tr>
-<td>size</td>
-<td>尺寸, 长宽一致, 包含外边距</td>
-<td>必需</td>
+<td align="left">size</td>
+<td align="left">尺寸, 长宽一致, 包含外边距</td>
+<td align="left">必需</td>
 </tr>
 <tr>
-<td>margin</td>
-<td>二维码图像的外边距, 默认 20px</td>
-<td>可选</td>
+<td align="left">margin</td>
+<td align="left">二维码图像的外边距, 默认 20px</td>
+<td align="left">可选</td>
 </tr>
 <tr>
-<td>dotScale</td>
-<td>数据区域点缩小比例,默认为0.35</td>
-<td>可选</td>
+<td align="left">dotScale</td>
+<td align="left">数据区域点缩小比例,默认为0.35</td>
+<td align="left">可选</td>
 </tr>
 <tr>
-<td>correctLevel</td>
-<td>容错级别 0-3</td>
-<td>可选</td>
+<td align="left">correctLevel</td>
+<td align="left">容错级别 0-3</td>
+<td align="left">可选</td>
 </tr>
 <tr>
-<td>whiteMargin</td>
-<td>若设为 true, 背景图外将绘制白色边框（默认是true）</td>
-<td>可选</td>
+<td align="left">whiteMargin</td>
+<td align="left">若设为 true, 背景图外将绘制白色边框（默认是true）</td>
+<td align="left">可选</td>
 </tr>
 <tr>
-<td>bindElement</td>
-<td>指定是否需要自动将生成的二维码绑定到HTML上（默认是true）</td>
-<td>可选</td>
+<td align="left">bindElement</td>
+<td align="left">指定是否需要自动将生成的二维码绑定到HTML上（默认是true）</td>
+<td align="left">可选</td>
 </tr>
 <tr>
-<td>callback</td>
-<td>生成的二维码 Data URI 可以在回调中取得,第一个参数为二维码 data URL, 第二个参数为 props 传过来的 qid(因为二维码生成是异步的,所以加个 id 用于排序)</td>
-<td>可选</td>
+<td align="left">callback</td>
+<td align="left">生成的二维码 Data URI 可以在回调中取得,第一个参数为二维码 data URL, 第二个参数为 props 传过来的 qid(因为二维码生成是异步的,所以加个 id 用于排序)</td>
+<td align="left">可选</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -548,8 +571,6 @@
           
             <a href="/blog/tags/vue-qr/" rel="tag"><i class="fa fa-tag"></i> vue-qr</a>
           
-            <a href="/blog/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/" rel="tag"><i class="fa fa-tag"></i> 二维码</a>
-          
         </div>
       
 
@@ -661,6 +682,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
             
 
             
