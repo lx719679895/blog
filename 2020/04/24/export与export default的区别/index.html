@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="vue,css modules," />
+  <meta name="keywords" content="es6,export," />
 
 
 
@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="CSS Modules是一个流行的，用于模块化和组合 CSS 的系统。vue-loader 提供了与 CSS Modules 的一流集成，可以作为模拟 scoped CSS 的替代方案。 本文将详细介绍如何在Vue中使用css modules。">
+<meta name="description" content="前言最近发现自己对export和export default的使用老是混淆，这还是源于自己对它们了解还不够深，于是就写了这篇笔记，希望对export和export defau的理解更加透彻。 export语句首先，两者都是ES6的export语句，用于从模块中导出函数、对象或原始值，以便其他程序可以通过 import 语句使用它们。无论您是否声明，导出的模块都处于严格模式。export语句不能用在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue中使用CSS Modules">
-<meta property="og:url" content="http://yoursite.com/2020/04/20/Vue%E4%B8%AD%E4%BD%BF%E7%94%A8CSS%20Modules/index.html">
+<meta property="og:title" content="export与export default的区别">
+<meta property="og:url" content="http://yoursite.com/2020/04/24/export%E4%B8%8Eexport%20default%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="ShawLee&#39;s Blog">
-<meta property="og:description" content="CSS Modules是一个流行的，用于模块化和组合 CSS 的系统。vue-loader 提供了与 CSS Modules 的一流集成，可以作为模拟 scoped CSS 的替代方案。 本文将详细介绍如何在Vue中使用css modules。">
-<meta property="article:published_time" content="2020-04-20T06:48:41.000Z">
-<meta property="article:modified_time" content="2020-04-20T07:26:30.254Z">
+<meta property="og:description" content="前言最近发现自己对export和export default的使用老是混淆，这还是源于自己对它们了解还不够深，于是就写了这篇笔记，希望对export和export defau的理解更加透彻。 export语句首先，两者都是ES6的export语句，用于从模块中导出函数、对象或原始值，以便其他程序可以通过 import 语句使用它们。无论您是否声明，导出的模块都处于严格模式。export语句不能用在">
+<meta property="article:published_time" content="2020-04-24T07:56:02.000Z">
+<meta property="article:modified_time" content="2020-04-26T03:05:04.638Z">
 <meta property="article:author" content="Lixiao">
-<meta property="article:tag" content="vue">
-<meta property="article:tag" content="css modules">
+<meta property="article:tag" content="es6">
+<meta property="article:tag" content="export">
 <meta name="twitter:card" content="summary">
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/20/Vue中使用CSS Modules/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/24/export与export default的区别/"/>
 
 
 
 
 
-  <title>Vue中使用CSS Modules | ShawLee's Blog</title>
+  <title>export与export default的区别 | ShawLee's Blog</title>
   
 
 
@@ -250,7 +250,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2020/04/20/Vue%E4%B8%AD%E4%BD%BF%E7%94%A8CSS%20Modules/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2020/04/24/export%E4%B8%8Eexport%20default%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lixiao">
@@ -267,7 +267,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue中使用CSS Modules</h1>
+          <h1 class="post-title" itemprop="name headline">export与export default的区别</h1>
         
 
         <div class="post-meta">
@@ -279,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-20T14:48:41+08:00">
-                2020-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-24T15:56:02+08:00">
+                2020-04-24
               </time>
             
 
@@ -333,7 +333,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  885
+                  577
                 </span>
               
 
@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -370,35 +370,29 @@
       
 
       
-        <p>CSS Modules是一个流行的，用于模块化和组合 CSS 的系统。<code>vue-loader</code> 提供了与 CSS Modules 的一流集成，可以作为模拟 scoped CSS 的替代方案。</p>
-<p>本文将详细介绍如何在Vue中使用css modules。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近发现自己对export和export default的使用老是混淆，这还是源于自己对它们了解还不够深，于是就写了这篇笔记，希望对export和export defau的理解更加透彻。</p>
+<h2 id="export语句"><a href="#export语句" class="headerlink" title="export语句"></a>export语句</h2><p>首先，两者都是ES6的export语句，用于从模块中导出函数、对象或原始值，以便其他程序可以通过 import 语句使用它们。<br>无论您是否声明，导出的模块都处于严格模式。export语句不能用在嵌入式脚本中。</p>
+<p>存在两种 exports 导出方式：<br>export：命名导出（每个模块包含任意数量）。<br>export default：默认导出（每个模块包含一个）。</p>
 <a id="more"></a>
 
-<h2 id="与scoped对比"><a href="#与scoped对比" class="headerlink" title="与scoped对比"></a>与scoped对比</h2><p>最开始使用Vue的时候，提倡并大量使用的是scoped技术</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">  @media (min-width: 250px) &#123;</span><br><span class="line">    .list-container:hover &#123;</span><br><span class="line">      background: orange;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>这个可选 scoped 属性会自动添加一个唯一的属性 (比如 data-v-21e5b78) 为组件内 CSS 指定作用域，编译的时候 .list-container:hover 会被编译成类似 .list-container[data-v-21e5b78]:hover。但是，它并不能完全避免冲突。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span data-v-0467f817 class&#x3D;&quot;errShow&quot;&gt;用户名不得为空&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<p>以上面的代码为例，使用scoped之后，它在元素上添加了一个唯一的属性’data-v-0467f817’，CSS样式被编译如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.errShow[data-v-0467f817] &#123;</span><br><span class="line">    font-size: 12px;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是，如果用户也定义了一个errShow类名，会影响到所有定义为errShow类名的组件的显示。<br>而CSS modules则做的更彻底，它不是添加属性，而是直接改变类名。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class&#x3D;&quot;_3ylglHI_7ASkYw5BlOlYIv_0&quot;&gt;用户名不得为空&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<p>这样，大大降低了冲突的可能性，只要不是用户直接给span标签设置样式，基本上不会影响组件的显示。</p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>下面来介绍CSS modules在Vue中的具体用法。<br>在style标签中添加module属性，表示打开CSS-loader的模块模式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;style module&gt;</span><br><span class="line">.red &#123;color: red;&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<p>这个<code>module</code>特性指引 Vue Loader 作为名为 $style 的计算属性，向组件注入 CSS Modules 局部对象。然后你就可以在模板中通过一个动态类绑定来使用它了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p :class&#x3D;&quot;$style.red&quot;&gt;</span><br><span class="line">    This should be red</span><br><span class="line">  &lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
-<p>如果类名包含中划线，则使用中括号语法或驼峰写法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :class&#x3D;&quot;$style[&#39;header-tit&#39;]&quot;&gt;类别推荐&lt;&#x2F;div&gt;</span><br><span class="line">&lt;!--或者--&gt;</span><br><span class="line">&lt;div :class&#x3D;&quot;$style.headerTit&quot;&gt;类别推荐&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-<p>因为这是一个计算属性，所以它也支持 :class 的对象/数组语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p :class&#x3D;&quot;&#123; [$style.red]: isRed &#125;&quot;&gt;</span><br><span class="line">      Am I red?</span><br><span class="line">    &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p :class&#x3D;&quot;[$style.red, $style.bold]&quot;&gt;</span><br><span class="line">      Red and bold</span><br><span class="line">    &lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>如果你的项目是用vue-cli搭建的，那么脚手架已经为你配置好了，直接可以使用，如果你是用webpack自己搭建的项目或想要修改默认配置，则进行下面配置。<br>css-loader关于CSS modules的默认配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  modules: true,</span><br><span class="line">  importLoaders: 1,</span><br><span class="line">  localIdentName: &#39;[hash:base64]&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以使用vue-loader的css Modules选项为css-loader进行自定义的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: &#39;\.vue$&#39;,</span><br><span class="line">      loader: &#39;vue-loader&#39;,</span><br><span class="line">      options: &#123;</span><br><span class="line">        cssModules: &#123;</span><br><span class="line">          localIdentName: &#39;[path][name]---[local]---[hash:base64:5]&#39;,</span><br><span class="line">          camelCase: true</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="自定义的注入名称"><a href="#自定义的注入名称" class="headerlink" title="自定义的注入名称"></a>自定义的注入名称</h2><p>在 .vue 中你可以定义不止一个<code>&lt;style&gt;</code>，为了避免被覆盖，你可以通过设置<code>module</code>属性来为它们定义注入后计算属性的名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style module&#x3D;&quot;a&quot;&gt;</span><br><span class="line">  &#x2F;* 注入标识符 a *&#x2F;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;style module&#x3D;&quot;b&quot;&gt;</span><br><span class="line">  &#x2F;* 注入标识符 b *&#x2F;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p>1、<a href="https://vue-loader.vuejs.org/zh/guide/css-modules.html#%E7%94%A8%E6%B3%95" target="_blank" rel="noopener">Vue官网</a><br>2、<a href="https://www.cnblogs.com/xiaohuochai/p/8537959.html" target="_blank" rel="noopener">在vue中使用css modules替代scroped</a></p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h4 id="1、你能够在每一个模块中定义多个命名导出，但是只允许有一个默认导出。"><a href="#1、你能够在每一个模块中定义多个命名导出，但是只允许有一个默认导出。" class="headerlink" title="1、你能够在每一个模块中定义多个命名导出，但是只允许有一个默认导出。"></a>1、你能够在每一个模块中定义多个命名导出，但是只允许有一个默认导出。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 导出早前定义的函数</span><br><span class="line">export &#123; myFunction &#125;; </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 导出常量</span><br><span class="line">export const foo &#x3D; Math.sqrt(2);</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 默认导出（函数）</span><br><span class="line">export default function() &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 默认导出（类）</span><br><span class="line">export default class &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、在import时，命名导出必须使用相应对象的相同名称导入，而且必须加-。但是，默认导出可以使用任何名称导入，而且不用加-。在导出多个值时，命名导出非常有用。"><a href="#2、在import时，命名导出必须使用相应对象的相同名称导入，而且必须加-。但是，默认导出可以使用任何名称导入，而且不用加-。在导出多个值时，命名导出非常有用。" class="headerlink" title="2、在import时，命名导出必须使用相应对象的相同名称导入，而且必须加{}。但是，默认导出可以使用任何名称导入，而且不用加{}。在导出多个值时，命名导出非常有用。"></a>2、在import时，<code>命名导出</code>必须使用相应对象的相同名称导入，而且必须加<code>{}</code>。但是，<code>默认导出</code>可以使用任何名称导入，而且不用加<code>{}</code>。在导出多个值时，<code>命名导出</code>非常有用。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; test.js文件</span><br><span class="line">export const test1 &#x3D; 123</span><br><span class="line">export let test2 &#x3D; true</span><br><span class="line">export var test3 &#x3D; &#39;shawlee&#39;</span><br><span class="line"></span><br><span class="line">import &#123;test1, test2, test3&#125; form &#39;.&#x2F;test&#39; &#x2F;&#x2F;正确</span><br><span class="line">import &#123;test4&#125; form &#39;.&#x2F;test&#39; &#x2F;&#x2F;错误</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let k; </span><br><span class="line">export default k &#x3D; 12; &#x2F;&#x2F; 在 test.js文件中定义导出</span><br><span class="line"></span><br><span class="line">import m from &#39;.&#x2F;test&#39; &#x2F;&#x2F; 由于k 是默认导出，所以可以自由使用import m 替代import k</span><br><span class="line"></span><br><span class="line">console.log(m);        &#x2F;&#x2F; 输出为 12</span><br></pre></td></tr></table></figure>
+<p>下面的语法不能从导入的模块导出默认导出值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import * from …;</span><br></pre></td></tr></table></figure>
+<p>如果需要导出默认值，请使用下列代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123;default&#125; from &#39;mod&#39;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、不能使用var、let-或-const-用于导出默认值-export-default。"><a href="#3、不能使用var、let-或-const-用于导出默认值-export-default。" class="headerlink" title="3、不能使用var、let 或 const 用于导出默认值 export default。"></a>3、不能使用<code>var</code>、<code>let</code> 或 <code>const</code> 用于导出默认值 <code>export default</code>。</h4><blockquote>
+<p><code>export var test1=&#39;...&#39;</code>是合法语句，但是<code>export default var e2=&#39;...&#39;</code>是不合法的（<code>let</code>和<code>const</code>也一样）</p>
+</blockquote>
+<h4 id="4、export-default可以直接添加标识符导出，例如export-default-e2-export如果要导出已经声明的表示符-必须使用-例如export-e1-注意：这里-不是声明一个对象。"><a href="#4、export-default可以直接添加标识符导出，例如export-default-e2-export如果要导出已经声明的表示符-必须使用-例如export-e1-注意：这里-不是声明一个对象。" class="headerlink" title="4、export default可以直接添加标识符导出，例如export default e2;export如果要导出已经声明的表示符,必须使用{},例如export {e1},注意：这里{}不是声明一个对象。"></a>4、<code>export default</code>可以直接添加标识符导出，例如<code>export default e2</code>;<code>export</code>如果要导出已经声明的表示符,必须使用<code>{}</code>,例如<code>export {e1}</code>,注意：这里<code>{}</code>不是声明一个对象。</h4>
       
     </div>
     
@@ -423,9 +417,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+            <a href="/blog/tags/es6/" rel="tag"><i class="fa fa-tag"></i> es6</a>
           
-            <a href="/blog/tags/css-modules/" rel="tag"><i class="fa fa-tag"></i> css modules</a>
+            <a href="/blog/tags/export/" rel="tag"><i class="fa fa-tag"></i> export</a>
           
         </div>
       
@@ -438,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2020/03/26/vue%E4%B8%AD%E4%BD%BF%E7%94%A8vue-qr%E7%94%9F%E6%88%90%E6%BC%82%E4%BA%AE%E7%9A%84%E4%BA%8C%E7%BB%B4%E7%A0%81/" rel="next" title="vue中使用vue-qr生成漂亮的二维码">
-                <i class="fa fa-chevron-left"></i> vue中使用vue-qr生成漂亮的二维码
+              <a href="/blog/2020/04/20/Vue%E4%B8%AD%E4%BD%BF%E7%94%A8CSS%20Modules/" rel="next" title="Vue中使用CSS Modules">
+                <i class="fa fa-chevron-left"></i> Vue中使用CSS Modules
               </a>
             
           </div>
@@ -447,10 +441,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2020/04/24/export%E4%B8%8Eexport%20default%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="prev" title="export与export default的区别">
-                export与export default的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -591,7 +581,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#与scoped对比"><span class="nav-number">1.</span> <span class="nav-text">与scoped对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">2.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义的注入名称"><span class="nav-number">4.</span> <span class="nav-text">自定义的注入名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-number">5.</span> <span class="nav-text">资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#export语句"><span class="nav-number">2.</span> <span class="nav-text">export语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">3.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、你能够在每一个模块中定义多个命名导出，但是只允许有一个默认导出。"><span class="nav-number">4.0.1.</span> <span class="nav-text">1、你能够在每一个模块中定义多个命名导出，但是只允许有一个默认导出。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、在import时，命名导出必须使用相应对象的相同名称导入，而且必须加-。但是，默认导出可以使用任何名称导入，而且不用加-。在导出多个值时，命名导出非常有用。"><span class="nav-number">4.0.2.</span> <span class="nav-text">2、在import时，命名导出必须使用相应对象的相同名称导入，而且必须加{}。但是，默认导出可以使用任何名称导入，而且不用加{}。在导出多个值时，命名导出非常有用。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、不能使用var、let-或-const-用于导出默认值-export-default。"><span class="nav-number">4.0.3.</span> <span class="nav-text">3、不能使用var、let 或 const 用于导出默认值 export default。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、export-default可以直接添加标识符导出，例如export-default-e2-export如果要导出已经声明的表示符-必须使用-例如export-e1-注意：这里-不是声明一个对象。"><span class="nav-number">4.0.4.</span> <span class="nav-text">4、export default可以直接添加标识符导出，例如export default e2;export如果要导出已经声明的表示符,必须使用{},例如export {e1},注意：这里{}不是声明一个对象。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
